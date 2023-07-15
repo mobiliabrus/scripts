@@ -4,3 +4,5 @@ yarn.lock
 .vscode
 packages
 .DS_Store
+t.json
+download/
