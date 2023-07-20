@@ -1,4 +1,13 @@
+window._key_ = 't1-3';
 window.__a__ = {}
+
+if (localStorage.getItem(window._key_)) {
+  try {
+    window.__a__ = JSON.parse(localStorage.getItem(window._key_));
+  } catch (e) {
+    //
+  }
+}
 
 ;(function () {
   const count = () => {
@@ -50,3 +59,5 @@ window.__a__ = {}
     console.log('nothing changed.');
   }
 })();
+
+localStorage.setItem(window._key_, JSON.stringify(window.__a__));
