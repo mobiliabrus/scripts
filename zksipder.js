@@ -1,4 +1,4 @@
-window._key_ = 't1-4';
+window._key_ = 't2-1';
 window.__a__ = [];
 
 if (localStorage.getItem(window._key_)) {
