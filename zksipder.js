@@ -1,4 +1,4 @@
-window._key_ = 't2-1';
+window._key_ = '00597-4-2';
 window.__a__ = [];
 
 if (localStorage.getItem(window._key_)) {
@@ -43,6 +43,7 @@ if (localStorage.getItem(window._key_)) {
     qa.add(questions[i]);
   }
   // 输出题集
+  console.log(JSON.stringify(window.__a__).replaceAll("'", "\\'").replaceAll('"', '\''));
   const after = Array.from(qa).length;
   if (after > before) {
     console.log(`${before} -> ${after}`);
@@ -50,7 +51,6 @@ if (localStorage.getItem(window._key_)) {
   } else {
     console.log('nothing changed.');
   }
-  console.log(JSON.stringify(window.__a__).replaceAll("'", "\\'").replaceAll('"', '\''));
 })();
 
 localStorage.setItem(window._key_, JSON.stringify(window.__a__));

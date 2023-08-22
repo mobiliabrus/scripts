@@ -22,12 +22,18 @@ const download = () => {
   console.log('download', file, text);
 
   return new Promise((resolve) => {
-    http.get(file, (res) => {
-      const stream = fs.createWriteStream(path.join(__dirname, './download', text + '.doc'));
-      res.pipe(stream);
+    const target = path.join(__dirname, './download', text + '.doc');
+    if (!fs.existsSync(target)) {
+      http.get(file, (res) => {
+        const stream = fs.createWriteStream(target);
+        res.pipe(stream);
+        i++;
+        resolve();
+      })
+    } else {
       i++;
       resolve();
-    })
+    }
   }).then(download);
 };
 
